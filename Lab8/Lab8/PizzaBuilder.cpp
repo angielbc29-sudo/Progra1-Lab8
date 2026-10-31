@@ -58,7 +58,7 @@ void PizzaBuilder::IrAlSiguienteIngrediente() {
         // SelectMeat();
     case 4:
         // TODO hierbas: descomenta SelectHerb(). No pongas break todavía.
-        // SelectHerb();
+         SelectHerb();
     default:
         std::cout << "No existen más ingredientes para tu pizza." << std::endl;
         break;
@@ -175,11 +175,42 @@ void PizzaBuilder::SelectTomatoes() {
 //void PizzaBuilder::SelectCheese() {
 // // Resolver.
 //}
-//
-//void PizzaBuilder::SelectHerb() {
-//    // Resolver.
-//}
-//
+
+
+void PizzaBuilder::SelectHerb() {
+
+IngredientSelector<HerbsRepository> selector(herbRepo_, availableHerbs_, "hierba");
+bool yaPregunto = false;
+
+while (true) {
+    std::cout << "\n--- Selección de hierbas ---" << std::endl;
+    selector.DisplayAvailableIngredients();
+
+    std::cout << "\nIngresa el tipo de hierba (o 'listo' para terminar): ";
+    std::string userChoice;
+    std::getline(std::cin, userChoice);
+
+    if (userChoice == "listo" || userChoice == "LISTO") {
+        system("cls");
+        break;
+    }
+
+    bool exitosa = selector.AddIngredientToPizza(userChoice, selectedHerbs_);
+    if (exitosa) {
+        std::cout << "La selección fue exitosa." << std::endl;
+    }
+    else {
+        std::cout << "La selección no fue exitosa." << std::endl;
+    }
+
+    if (exitosa && !yaPregunto) {
+        yaPregunto = true;
+    }
+
+    WaitForEnterAndClear();
+}
+}
+
 //void PizzaBuilder::SelectMeat() {
 //    // Resolver.
 //}
