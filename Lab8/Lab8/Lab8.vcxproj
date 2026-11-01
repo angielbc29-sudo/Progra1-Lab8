@@ -143,6 +143,7 @@
     <ClCompile Include="HerbsRepository.cpp" />
     <ClCompile Include="IngredientSelector.cpp" />
     <ClCompile Include="Lab8.cpp" />
+    <ClCompile Include="MeatsRepository.cpp" />
     <ClCompile Include="PizzaBuilder.cpp" />
     <ClCompile Include="TomatoesRepository.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="DataLoader.h" />
     <ClInclude Include="HerbsRepository.h" />
     <ClInclude Include="IngredientSelector.h" />
+    <ClInclude Include="MeatsRepository.h" />
     <ClInclude Include="PizzaBuilder.h" />
     <ClInclude Include="TomatoesRepository.h" />
   </ItemGroup>

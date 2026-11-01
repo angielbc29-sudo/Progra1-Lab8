@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "TomatoesRepository.h"
+#include "MeatsRepository.h"
 #include "HerbsRepository.h"
 #include "IngredientSelector.h"
 
@@ -19,11 +20,12 @@ private:
     void IrAlSiguienteIngrediente();
     void SelectCheese();
     void SelectHerb();
-    void SelectMeat();
+    void SelectMeats();
     void MostrarGrupo(const std::string& nombre, const std::vector<std::string>& ingredientes) const;
     int ContarTiposAgregados() const;
 
     TomatoesRepository tomatoRepo_;
+	MeatsRepository meatRepo_;
     HerbsRepository herbRepo_;
 
     // Cada miembro llena su lista desde su método Select.
@@ -35,6 +37,8 @@ private:
     const std::vector<std::string> availableTomatoes_ = { "Cherry", "Roma", "Beefsteak", "Heirloom", "Grape" };
     // TODO: agrega aquí la lista de tu ingrediente.
     // const std::vector<std::string> availableCheeses_ = { ... };
+    const std::vector<std::string> availableMeats_ = { "Pepperoni","Bacon","Chicken","Shrimp","Mignon","Ham","Sausage","Prosciutto"};
+    // const std::vector<std::string> availableHerbs_ = { ... };
     // const std::vector<std::string> availableMeats_ = { ... };
     const std::vector<std::string> availableHerbs_ = { "Basil", "Parsley", "Oregano", "Thyme", "Rosemary", "Cilantro", "Sage", "Chives" };
 };

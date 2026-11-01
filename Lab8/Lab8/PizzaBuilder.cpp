@@ -54,8 +54,7 @@ void PizzaBuilder::IrAlSiguienteIngrediente() {
         // así el switch sigue hasta el default mientras no haya más ingredientes.
         // SelectCheese();
     case 3:
-        // TODO carnes: descomenta SelectMeat(). No pongas break todavía.
-        // SelectMeat();
+        SelectMeats();
     case 4:
         // TODO hierbas: descomenta SelectHerb(). No pongas break todavía.
          SelectHerb();
@@ -166,6 +165,50 @@ void PizzaBuilder::SelectTomatoes() {
         WaitForEnterAndClear();
     }
 }
+
+
+void PizzaBuilder::SelectMeats() {
+    
+    IngredientSelector<MeatsRepository> selector(meatRepo_, availableMeats_, "carnes");
+    bool yaPregunto = false;
+
+    while (true) {
+        std::cout << "\n--- Selección de carnes ---" << std::endl;
+        selector.DisplayAvailableIngredients();
+
+        std::cout << "\nIngresa el tipo de carnes (o 'listo' para terminar): ";
+        std::string userChoice;
+        std::getline(std::cin, userChoice);
+
+        if (userChoice == "listo" || userChoice == "LISTO") {
+            system("cls");
+            break;
+        }
+
+        bool exitosa = selector.AddIngredientToPizza(userChoice, selectedMeats_);
+        if (exitosa) {
+            std::cout << "La selección fue exitosa." << std::endl;
+        }
+        else {
+            std::cout << "La selección no fue exitosa." << std::endl;
+        }
+
+        if (exitosa && !yaPregunto) {
+            yaPregunto = true;
+            if (!QuiereSeguirAgregandoTomate()) {
+                system("cls");
+                return;
+            }
+        }
+
+        WaitForEnterAndClear();
+    }
+}
+
+
+
+
+
 
 // TODO:  Crear cada uno su parte. ☝️ toma el ejemplo de  SelectTomatoes y crea tu propia implementación.
 // Guarda lo elegido en selectedCheeses_, selectedMeats_ o selectedHerbs_.
