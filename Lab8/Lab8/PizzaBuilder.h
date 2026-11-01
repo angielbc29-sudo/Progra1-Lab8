@@ -3,6 +3,7 @@
 #include <string>
 #include "TomatoesRepository.h"
 #include "MeatsRepository.h"
+#include "HerbsRepository.h"
 #include "IngredientSelector.h"
 
 class PizzaBuilder {
@@ -25,6 +26,7 @@ private:
 
     TomatoesRepository tomatoRepo_;
 	MeatsRepository meatRepo_;
+    HerbsRepository herbRepo_;
 
     // Cada miembro llena su lista desde su método Select.
     std::vector<std::string> selectedTomatoes_;
@@ -37,4 +39,6 @@ private:
     // const std::vector<std::string> availableCheeses_ = { ... };
     const std::vector<std::string> availableMeats_ = { "Pepperoni","Bacon","Chicken","Shrimp","Mignon","Ham","Sausage","Prosciutto"};
     // const std::vector<std::string> availableHerbs_ = { ... };
+    // const std::vector<std::string> availableMeats_ = { ... };
+    const std::vector<std::string> availableHerbs_ = { "Basil", "Parsley", "Oregano", "Thyme", "Rosemary", "Cilantro", "Sage", "Chives" };
 };
