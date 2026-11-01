@@ -21,6 +21,9 @@
     <ClCompile Include="DataLoader.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="CheeseRepository.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="IngredientSelector.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -31,12 +34,17 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="MeatsRepository.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="HerbsRepository.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataLoader.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="CheeseRepository.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="IngredientSelector.h">
