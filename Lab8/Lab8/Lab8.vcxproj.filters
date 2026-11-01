@@ -49,6 +49,8 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="MeatsRepository.h">
+ <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="HerbsRepository.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
