@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "CheeseRepository.h"
 #include "TomatoesRepository.h"
 #include "MeatsRepository.h"
 #include "HerbsRepository.h"
@@ -25,6 +26,7 @@ private:
     int ContarTiposAgregados() const;
 
     TomatoesRepository tomatoRepo_;
+    CheeseRepository cheeseRepo_;
 	MeatsRepository meatRepo_;
     HerbsRepository herbRepo_;
 
@@ -36,7 +38,7 @@ private:
 
     const std::vector<std::string> availableTomatoes_ = { "Cherry", "Roma", "Beefsteak", "Heirloom", "Grape" };
     // TODO: agrega aquí la lista de tu ingrediente.
-    // const std::vector<std::string> availableCheeses_ = { ... };
+    const std::vector<std::string> availableCheeses_ = { "Mozzarella", "Cheddar", "Parmesan", "Cream Cheese", "Gouda", "Blue Cheese", "Feta" };
     const std::vector<std::string> availableMeats_ = { "Pepperoni","Bacon","Chicken","Shrimp","Mignon","Ham","Sausage","Prosciutto"};
     // const std::vector<std::string> availableHerbs_ = { ... };
     // const std::vector<std::string> availableMeats_ = { ... };
