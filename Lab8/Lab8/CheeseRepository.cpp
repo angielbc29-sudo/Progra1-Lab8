@@ -1,5 +1,6 @@
 #include "CheeseRepository.h"
 #include <stdexcept>
+#include <fstream>
 
 
 CheeseRepository::CheeseRepository() {
@@ -21,4 +22,9 @@ void CheeseRepository::UpdateQuantity(const std::string& cheeseType, int newQuan
         throw std::invalid_argument("Tipo de queso desconocido: " + cheeseType);
     }
     it->second[0] = std::to_string(newQuantity);
+
+    std::ofstream out("cheese.txt");
+    for (const auto& par : data_) {
+        out << par.first << ": " << par.second[0] << "\n";
+    }
 }
