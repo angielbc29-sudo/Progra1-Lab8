@@ -195,10 +195,6 @@ void PizzaBuilder::SelectMeats() {
 
         if (exitosa && !yaPregunto) {
             yaPregunto = true;
-            if (!QuiereSeguirAgregandoTomate()) {
-                system("cls");
-                return;
-            }
         }
 
         WaitForEnterAndClear();
