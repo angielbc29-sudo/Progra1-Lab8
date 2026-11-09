@@ -1,4 +1,4 @@
-Basil: 120
+Basil: 119
 Parsley: 80
 Oregano: 98
 Thyme: 1

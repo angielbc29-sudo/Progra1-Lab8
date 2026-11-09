@@ -1,4 +1,5 @@
 #include "PizzaBuilder.h"
+#include "CheeseRepository.h"
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -50,9 +51,7 @@ void PizzaBuilder::IrAlSiguienteIngrediente() {
 
     switch (siguiente) {
     case 2:
-        // TODO queso: descomenta SelectCheese(). No pongas break:
-        // así el switch sigue hasta el default mientras no haya más ingredientes.
-        // SelectCheese();
+        SelectCheese();
     case 3:
         SelectMeats();
     case 4:
@@ -215,9 +214,38 @@ void PizzaBuilder::SelectMeats() {
 // En IrAlSiguienteIngrediente, descomenta la llamada de tu case.
 
 
-//void PizzaBuilder::SelectCheese() {
-// // Resolver.
-//}
+void PizzaBuilder::SelectCheese() {
+    IngredientSelector<CheeseRepository> selector(cheeseRepo_, availableCheeses_, "queso");
+    bool yaPregunto = false;
+
+    while (true) {
+        std::cout << "\n--- Selección de quesos ---" << std::endl;
+        selector.DisplayAvailableIngredients();
+
+        std::cout << "\nIngresa el tipo de queso (o 'listo' para terminar): ";
+        std::string userChoice;
+        std::getline(std::cin, userChoice);
+
+        if (userChoice == "listo" || userChoice == "LISTO") {
+            system("cls");
+            break;
+        }
+
+        bool exitosa = selector.AddIngredientToPizza(userChoice, selectedCheeses_);
+        if (exitosa) {
+            std::cout << "La selección fue exitosa." << std::endl;
+        }
+        else {
+            std::cout << "La selección no fue exitosa." << std::endl;
+        }
+
+        if (exitosa && !yaPregunto) {
+            yaPregunto = true;
+        }
+
+        WaitForEnterAndClear();
+    }
+}
 
 
 void PizzaBuilder::SelectHerb() {
