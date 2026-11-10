@@ -19,6 +19,7 @@ private:
     bool QuiereSeguirAgregandoTomate();
     bool QuiereSeguirAgregandoCarnes();
     bool QuiereSeguirAgregandoQueso();
+    bool QuiereSeguirAgregandoHierbas();
     void SelectTomatoes();
     void IrAlSiguienteIngrediente();
     void SelectCheese();
